@@ -10,7 +10,8 @@ import {Injectable} from "@angular/core";
 export class DataService {
 
     httpOptions: HttpOptions;
-    backendUrl: string = "http://localhost:3000"
+    backendUrl: string = "https://elearning-assessment-backend.onrender.com" //production
+    // backendUrl: string = "http://localhost" //development
 
     constructor(private http: HttpClient) {
         this.httpOptions = {

@@ -9,11 +9,19 @@ app.use(bodyParser.json());
 const port = 3000;
 
 const Pool = require('pg').Pool
+// const pool = new Pool({
+//     user: 'soham',
+//     host: 'localhost',
+//     database: 'postgres',
+//     password: 'password',
+//     port: '5432'
+// })
+
 const pool = new Pool({
-    user: 'soham',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'password',
+    user: 'superuser_amesite',
+    host: 'dpg-cj6luscl975s73ce112g-a.oregon-postgres.render.com',
+    database: 'amesite',
+    password: 'QiTMRopDvbpVmowiLQMdtEqh2yZeWxIb',
     port: '5432'
 })
 
@@ -23,6 +31,7 @@ app.listen(port, () => {
 
 app.post("/userdata", (req, res) => {
     const userInfo = req.body
+    console.log(req.hostname, "requested to add user details:", userInfo)
     pool.query('INSERT INTO amesite.user_data (email, name, grade) VALUES ($1, $2, $3) RETURNING *', [userInfo.email, userInfo.name, userInfo.grade], (error, response) => {
         if (error) {
             throw error
