@@ -1,0 +1,16 @@
+<div class="card-body">
+  <h5 class="card-title">Please provide the required details to begin the test!</h5>
+  <div>
+    <mat-form-field appearance="outline" style="width: 50%">
+      <mat-label>Enter your email</mat-label>
+      <input [formControl]="email" matInput placeholder="john@example.com" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" style="width: 50%">
+      <mat-label>Full Name</mat-label>
+      <input [formControl]="name" matInput placeholder="Full Name" required>
+    </mat-form-field>
+  </div>
+  <a (click)="onStartAssessment()" class="btn btn-primary">Start Assessment</a> <!-- Submit button -->
+</div>

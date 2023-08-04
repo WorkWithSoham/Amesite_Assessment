@@ -1,0 +1,18 @@
+<div class="card-body">
+    <div *ngFor="let question of questionList">
+        <mat-card class="m-4 mx-auto text-start shadow-lg" style="width: 50%">
+            <mat-card-content>
+                <div>
+                    <label class="mx-lg-2">{{ question.id }}. {{ question.question }}</label>
+                    <mat-radio-group>
+                        <div *ngFor="let option of question.options">
+                            <mat-radio-button (change)="calculateScore($event.value, question.answer)"
+                                              [value]=option>{{ option }} </mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <a (click)="emitGrades()" class="btn btn-primary">Submit</a>
+</div>
