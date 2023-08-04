@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser")
+const {ssl} = require("pg/lib/defaults");
 
 const app = express();
 app.use(cors("*"))
@@ -22,7 +23,8 @@ const pool = new Pool({
     host: 'dpg-cj6luscl975s73ce112g-a.oregon-postgres.render.com',
     database: 'amesite',
     password: 'QiTMRopDvbpVmowiLQMdtEqh2yZeWxIb',
-    port: '5432'
+    port: '5432',
+    ssl: true
 })
 
 app.listen(port, () => {
@@ -32,7 +34,7 @@ app.listen(port, () => {
 app.post("/userdata", (req, res) => {
     const userInfo = req.body
     console.log(req.hostname, "requested to add user details:", userInfo)
-    pool.query('INSERT INTO amesite.user_data (email, name, grade) VALUES ($1, $2, $3) RETURNING *', [userInfo.email, userInfo.name, userInfo.grade], (error, response) => {
+    pool.query('INSERT INTO user_data (email, name, grade) VALUES ($1, $2, $3) RETURNING *', [userInfo.email, userInfo.name, userInfo.grade], (error, response) => {
         if (error) {
             throw error
         }
