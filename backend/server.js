@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser")
-const {ssl} = require("pg/lib/defaults");
 
 const app = express();
 app.use(cors("*"))
@@ -33,7 +32,7 @@ app.listen(port, () => {
 
 app.post("/userdata", (req, res) => {
     const userInfo = req.body
-    console.log(req.hostname, "requested to add user details:", userInfo)
+    console.log(req.headers.origin, "requested to add user details:", userInfo)
     pool.query('INSERT INTO user_data (email, name, grade) VALUES ($1, $2, $3) RETURNING *', [userInfo.email, userInfo.name, userInfo.grade], (error, response) => {
         if (error) {
             throw error

@@ -11,7 +11,7 @@ export class DataService {
 
     httpOptions: HttpOptions;
     backendUrl: string = "https://elearning-assessment-backend.onrender.com" //production
-    // backendUrl: string = "http://localhost" //development
+    // backendUrl: string = "http://localhost:3000" //development
 
     constructor(private http: HttpClient) {
         this.httpOptions = {
