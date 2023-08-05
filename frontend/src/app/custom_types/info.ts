@@ -2,12 +2,14 @@ import {HttpHeaders} from "@angular/common/http";
 
 export interface BasicUserInfo {
     email: string | null;
-    name: string | null;
+    firstname: string | null;
+    lastname: string | null;
 }
 
 export interface CompleteUserInfo {
     email: string;
-    name: string;
+    firstname: string;
+    lastname: string;
     grade: number;
 }
 

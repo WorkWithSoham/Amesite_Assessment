@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
     assessmentComplete: boolean = false;
     userInfo: CompleteUserInfo = {
         email: "",
-        name: "",
+        firstname: "",
+        lastname: "",
         grade: 0
     }
 
@@ -28,9 +29,10 @@ export class AppComponent implements OnInit {
     }
 
     storeUserData(userData: BasicUserInfo) {
-        if (userData.email && userData.name) {
+        if (userData.email && userData.firstname && userData.lastname) {
             this.userInfo.email = userData.email
-            this.userInfo.name = userData.name
+            this.userInfo.firstname = userData.firstname
+            this.userInfo.lastname = userData.lastname
             this.infoProvided = true;
         }
     }

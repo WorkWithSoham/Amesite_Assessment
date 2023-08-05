@@ -11,7 +11,8 @@ import {BasicUserInfo} from "../custom_types/info";
 export class InfoPageComponent {
 
     email: FormControl<string | null> = new FormControl('', [Validators.required, Validators.email]);
-    name: FormControl<string | null> = new FormControl('', [Validators.required]);
+    firstname: FormControl<string | null> = new FormControl('', [Validators.required]);
+    lastname: FormControl<string | null> = new FormControl('', [Validators.required]);
 
     @Output() userInfoCollectEvent = new EventEmitter<BasicUserInfo>();
 
@@ -26,7 +27,8 @@ export class InfoPageComponent {
     onStartAssessment() {
         const userData: BasicUserInfo = {
             email: this.email.value,
-            name: this.name.value
+            firstname: this.firstname.value,
+            lastname: this.lastname.value
         }
         this.userInfoCollectEvent.emit(userData)
     }

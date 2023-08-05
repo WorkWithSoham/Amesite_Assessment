@@ -43,9 +43,9 @@ app.post("/userdata", (req, res) => {
         moodlewsrestformat: 'json',
         users: [
             {
-                username: userInfo.name.toLowerCase(),
-                firstname: userInfo.name,
-                lastname: '',
+                username: userInfo.firstname.toLowerCase() + userInfo.lastname.toLowerCase(),
+                firstname: userInfo.firstname,
+                lastname: userInfo.lastname,
                 email: userInfo.email,
                 password: 'password@123'
             }
