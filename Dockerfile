@@ -1,4 +1,4 @@
-# Use an official PHP image as the base image
+# Use an official PHP image as the base image with PHP 7.4
 FROM php:7.4-apache
 
 # Install required extensions and tools
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql zip opcache xmlrpc
+    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql zip opcache xmlrpc pgsql pdo_pgsql
 
 # Set the working directory
 WORKDIR /var/www/html
