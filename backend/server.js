@@ -80,7 +80,7 @@ app.post("/userdata", (req, res) => {
 
 
     axios.post(moodleURL, {}, {params: createUserParams}).then(resp => {
-        enrolStudentParams.enrolments.at(0).userid = resp.data[0].id
+        enrolStudentParams.enrolments[0].userid = resp.data[0].id
         gradeParams.userid = resp.data[0].id
 
         axios.post(moodleURL, {}, {params: enrolStudentParams}).then(resp => {
