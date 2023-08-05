@@ -11,7 +11,7 @@ export class AssessmentPageComponent {
 
     @Output() getUserGradesEvent: EventEmitter<number> = new EventEmitter<number>();
     questionList: Question[] = questionList;
-    finalGrade: number = 0;
+    finalGrade: number = 0.0;
     active: boolean = true
 
     calculateScore(ques: string, answer: string) {
