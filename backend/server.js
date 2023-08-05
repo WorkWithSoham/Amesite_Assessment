@@ -45,7 +45,7 @@ app.post("/userdata", (req, res) => {
             {
                 username: userInfo.name.toLowerCase(),
                 firstname: userInfo.name,
-                lastname: 'Lastname',
+                lastname: '',
                 email: userInfo.email,
                 password: 'password@123'
             }
