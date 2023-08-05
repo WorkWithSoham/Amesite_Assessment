@@ -71,7 +71,7 @@ app.post("/userdata", (req, res) => {
         moodlewsrestformat: 'json',
         assignmentid: 1,
         userid: 0,
-        grade: userInfo.grade,
+        grade: 0.0 + +userInfo.grade,
         attemptnumber: -1,
         addattempt: 0,
         workflowstate: 'Completed',
@@ -91,7 +91,7 @@ app.post("/userdata", (req, res) => {
         })
     })
 
-    pool.query('INSERT INTO user_data (email, name, grade) VALUES ($1, $2, $3) RETURNING *', [userInfo.email, userInfo.name, userInfo.grade], (error, response) => {
+    pool.query('INSERT INTO user_data (email, name, grade) VALUES ($1, $2, $3) RETURNING *', [userInfo.email, userInfo.firstname, userInfo.grade], (error, response) => {
         if (error) {
             throw error
         }
