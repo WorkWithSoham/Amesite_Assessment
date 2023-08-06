@@ -44,6 +44,11 @@ password: password
 - Open a terminal window on your computer.
 - Use the below command to connect to the PostgreSQL database.
 
-  ```bash
+```bash
   PGPASSWORD=QiTMRopDvbpVmowiLQMdtEqh2yZeWxIb psql -h dpg-cj6luscl975s73ce112g-a.oregon-postgres.render.com -U superuser_amesite amesite
+```
+- Once you are connected to the pgsql, you can run the command below to check the grade data uploaded in the PostgreSQL database.
+```bash
+  SELECT * FROM user_data;
+```
 
