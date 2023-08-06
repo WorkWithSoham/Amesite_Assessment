@@ -34,7 +34,7 @@ password: password
 **4. Check Marks on Moodle:**
 - Open a new browser tab and navigate to your Moodle instance (`https://elearning-assessment-moodle.moodlecloud.com`).
 - Log in to Moodle using given credentials.
-- Upon login, click on the "My Courses" tab to the top right of the dashboard and select the "Moodle Grade Assessment" assignment available.
+- Upon login, click on the "My Courses" tab to the top right of the dashboard and select the "Moodle Grade Assessment" course available.
 - Once the assignment page opens up, you can verify your posted scores in the "Grades" section.
 
   ![Screenshot 2023-08-06 at 1 31 16 PM](https://github.com/WorkWithSoham/Amesite_Assessment/assets/64754133/0067bc45-5048-423e-8a4a-2e62e7b7f842)
